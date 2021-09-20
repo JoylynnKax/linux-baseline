@@ -282,3 +282,12 @@ control 'os-13' do
     end
   end
 end
+
+control 'os-14' do
+  impact 1.0
+  title 'Check if antivirus is installed'
+  desc 'checks for the presence of Antivirus software on the production machine'
+  describe file('usr/bin/clamtk') do
+    it { should_exist }
+  end
+end
